@@ -65774,8 +65774,9 @@ void main() {
 			this.node = node;
 		}
 
-		push (lasBuffer) {
-			const workerPath = 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/LASDecoderWorker.js.seam';
+		push (lasBuffer) {			
+			const workerPath = Potree.scriptPath + '/workers/LASDecoderWorker.js';
+
 			const worker = Potree.workerPool.getWorker(workerPath);
 			const node = this.node;
 			const pointAttributes = node.pcoGeometry.pointAttributes;
@@ -65898,7 +65899,7 @@ void main() {
 				node.numPoints = numPoints;
 			}
 
-			let workerPath = 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/BinaryDecoderWorker.js.seam';
+			let workerPath = Potree.scriptPath + '/workers/BinaryDecoderWorker.js';
 			let worker = Potree.workerPool.getWorker(workerPath);
 
 			worker.onmessage = function (e) {
@@ -66816,7 +66817,7 @@ void main() {
 		}
 
 		workerPath() {
-			return 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/EptBinaryDecoderWorker.js.seam';
+			return Potree.scriptPath + '/workers/EptBinaryDecoderWorker.js';
 		}
 
 		load(node) {
@@ -67022,7 +67023,8 @@ void main() {
 		constructor(node) { this.node = node; }
 
 		push(las) {
-			let workerPath = 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/EptLaszipDecoderWorker.js.seam';
+			let workerPath = Potree.scriptPath +
+				'/workers/EptLaszipDecoderWorker.js';
 			let worker = Potree.workerPool.getWorker(workerPath);
 
 			worker.onmessage = (e) => {
@@ -67097,7 +67099,7 @@ void main() {
 	    }
 
 	    workerPath() {
-	        return 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/EptZstandardDecoderWorker.js.seam';
+	        return Potree.scriptPath + '/workers/EptZstandardDecoderWorker.js';
 	    }
 	};
 
