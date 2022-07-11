@@ -65775,7 +65775,7 @@ void main() {
 		}
 
 		push (lasBuffer) {			
-			const workerPath = Potree.scriptPath + '/workers/LASDecoderWorker.js';
+			const workerPath = 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/LASDecoderWorker.js.seam';
 
 			const worker = Potree.workerPool.getWorker(workerPath);
 			const node = this.node;
@@ -65899,7 +65899,7 @@ void main() {
 				node.numPoints = numPoints;
 			}
 
-			let workerPath = Potree.scriptPath + '/workers/BinaryDecoderWorker.js';
+			let workerPath = 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/BinaryDecoderWorker.js.seam';
 			let worker = Potree.workerPool.getWorker(workerPath);
 
 			worker.onmessage = function (e) {
@@ -66817,7 +66817,7 @@ void main() {
 		}
 
 		workerPath() {
-			return Potree.scriptPath + '/workers/EptBinaryDecoderWorker.js';
+			return 'http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers//EptBinaryDecoderWorker.js.seam';
 		}
 
 		load(node) {
