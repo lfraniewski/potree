@@ -67023,8 +67023,7 @@ void main() {
 		constructor(node) { this.node = node; }
 
 		push(las) {
-			let workerPath = Potree.scriptPath +
-				'/workers/EptLaszipDecoderWorker.js';
+			let workerPath = "http://localhost:8080/itm-war/javax.faces.resource/script/potree-workers/EptLaszipDecoderWorker.js.seam";
 			let worker = Potree.workerPool.getWorker(workerPath);
 
 			worker.onmessage = (e) => {
